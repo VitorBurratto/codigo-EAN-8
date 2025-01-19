@@ -1,6 +1,6 @@
 <h1 align="center"> 📊 Gerador de Códigos de Barras EAN-8 🌐 </h1>
 
-Este projeto é um gerador de códigos de barras baseado no padrão EAN-8, que salva os códigos no formato PBM (Portable Bitmap).
+Este projeto é um gerador de códigos de barras baseado no padrão EAN-8, que salva os códigos no formato PBM (Portable Bitmap) e extrai.
 
 ## 🔧 Funcionalidades do Projeto
 
@@ -8,15 +8,15 @@ Este projeto é um gerador de códigos de barras baseado no padrão EAN-8, que s
 
 - **Parâmetros Opcionais**:
   - Nome do arquivo de saída (PBM).
+  - Espaçamento ao redor do código (em pixels).
   - Largura de cada barra (em pixels).
   - Altura do código de barras (em pixels).
-  - Espaçamento ao redor do código (em pixels).
 
 - **Valores Padrão**: Caso algum parâmetro não seja fornecido, o programa utiliza os seguintes valores:
   - Nome do Arquivo: `codigoEAN8.pbm`
+  - Espaçamento: `4`
   - Largura: `3`
   - Altura: `50`
-  - Espaçamento: `4`
 
 - **Validação de Identificador**: Verifica se o código fornecido tem 8 dígitos numéricos e valida o dígito verificador.
 
@@ -52,7 +52,7 @@ gcc -o extrair extrair.c barcodeProcessor.c
 ### 🚀 Execução 
 Para executar o programa:
 ```bash
-./gerar < identificador > [nomeArquivo] [largura] [altura] [espaçamento]
+./gerar < identificador > [nomeArquivo] [espaçamento] [largura] [altura]
 ```
 - `<identificador>`: Código EAN-8 (obrigatório).
 - `[nomeArquivo]`: Nome do arquivo de saída (opcional).
@@ -87,21 +87,23 @@ Usa os valores padrão para nome do arquivo, espaçamento, largura e altura.
 
 #### Exemplo 2: Com Altura Personalizada
 ```bash
-./gerar 12345678 - - - 60
+./gerar 12345678 - - 4 -
 ```
-Define apenas a altura como `60`, mantendo os outros valores padrão.
+Define apenas a largura como `4`, mantendo os outros valores padrão.
 
 #### Exemplo 3: Todos os Parâmetros
 ```bash
-./gerar 99887766 meuCodigo.pbm 10 6 40
+./gerar 99887766 meuCodigo.pbm 8 5 140
 ```
 Gera um código de barras personalizado com todos os valores definidos.
 
 ### 📠 Exemplo Para Extrair o codigo depois de já ter criado o arquivo pbm
 
 ```bash
-./extrair codigoEAN8.pbm (* tem que ser um arquivo já gerado pelo comando anterior)
+./extrair codigoEAN8.pbm
 ```
+Tem que ser um arquivo válido já gerado pelo comando ./gerar < identificador >
+
 
 ## 🧑‍💻Autor 
 
