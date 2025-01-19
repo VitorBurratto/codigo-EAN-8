@@ -1,6 +1,6 @@
 <h1 align="center"> 📊 Gerador de Códigos de Barras EAN-8 🌐 </h1>
 
-Este projeto é um gerador de códigos de barras baseado no padrão EAN-8, que salva os códigos no formato PBM (Portable Bitmap) e extrai.
+Este projeto é um gerador de códigos de barras baseado no padrão EAN-8, que salva os códigos no formato PBM (Portable Bitmap) e extrai o identificaor da imagem.
 
 ## 🔧 Funcionalidades do Projeto
 
@@ -97,7 +97,7 @@ Define apenas a largura como `4`, mantendo os outros valores padrão.
 ```
 Gera um código de barras personalizado com todos os valores definidos.
 
-### 📠 Exemplo Para Extrair o codigo depois de já ter criado o arquivo pbm
+### 📠 Exemplo Para Extrair o codigo depois de já ter criado o arquivo pbm, o qual extrai o identificador da imagem.
 
 ```bash
 ./extrair codigoEAN8.pbm
