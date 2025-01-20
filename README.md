@@ -1,4 +1,4 @@
-<h1 align="center"> 📊 Gerador de Códigos de Barras EAN-8 🌐 </h1>
+<h1 align="center"> 📊 Gerador e Extrator de Códigos de Barras EAN-8 🌐 </h1>
 
 Este projeto é um gerador de códigos de barras baseado no padrão EAN-8, que salva os códigos no formato PBM (Portable Bitmap) e extrai o identificaor da imagem.
 
